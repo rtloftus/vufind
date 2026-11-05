@@ -212,7 +212,7 @@ class MultiILSTest extends \PHPUnit\Framework\TestCase
             'username' => 'testuser', 'password' => 'testpass', 'target' => 'ils1',
         ];
         $request = new \Laminas\Http\PhpEnvironment\Request();
-        $request->setPost(new \Laminas\Stdlib\Parameters($post));
+        $request->setPost($post);
         return $request;
     }
 

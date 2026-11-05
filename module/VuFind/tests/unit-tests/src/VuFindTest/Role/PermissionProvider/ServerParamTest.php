@@ -224,7 +224,7 @@ class ServerParamTest extends \PHPUnit\Framework\TestCase
     protected function checkServerParams($headers, $options, $expectedResult)
     {
         $request = new \Laminas\Http\PhpEnvironment\Request();
-        $request->setServer(new \Laminas\Stdlib\Parameters($headers));
+        $request->setServer($headers);
         $header = new ServerParam($request);
         $result = $header->getPermissions($options);
         $this->assertEquals($result, $expectedResult);

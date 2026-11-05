@@ -86,7 +86,7 @@ class SIP2Test extends \PHPUnit\Framework\TestCase
             'username' => 'testuser', 'password' => 'testpass',
         ];
         $request = new Request();
-        $request->setPost(new \Laminas\Stdlib\Parameters($post));
+        $request->setPost($post);
         return $request;
     }
 

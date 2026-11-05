@@ -112,7 +112,7 @@ final class DatabaseTest extends \PHPUnit\Framework\TestCase
     protected function getRequest($post)
     {
         $request = new \Laminas\Http\Request();
-        $request->setPost(new \Laminas\Stdlib\Parameters($post));
+        $request->setPost($post);
         return $request;
     }
 

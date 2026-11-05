@@ -29,7 +29,7 @@
 
 namespace VuFindTest\Auth;
 
-use Laminas\Stdlib\Parameters;
+
 use PHPUnit\Framework\MockObject\MockObject;
 use VuFind\Auth\Database;
 use VuFind\Db\Entity\UserEntityInterface;
@@ -512,7 +512,7 @@ class DatabaseUnitTest extends \PHPUnit\Framework\TestCase
      */
     protected function getRequest($post = []): MockObject&Request
     {
-        $post = new Parameters($post);
+        $post = [$post];
         $request = $this->getMockBuilder(Request::class)
             ->onlyMethods(['getPost'])->getMock();
         $request->method('getPost')->willReturn($post);

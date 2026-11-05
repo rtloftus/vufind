@@ -63,7 +63,7 @@ class UserIpReaderFactoryTest extends \PHPUnit\Framework\TestCase
         );
         $mockRequest = $this->createMock(\Laminas\Http\PhpEnvironment\Request::class);
         $mockRequest->expects($this->once())->method('getServer')
-            ->willReturn(new \Laminas\Stdlib\Parameters($server));
+            ->willReturn([$server]);
         $container->set('Request', $mockRequest);
         return $container;
     }

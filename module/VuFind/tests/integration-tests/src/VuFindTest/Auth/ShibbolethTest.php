@@ -225,7 +225,7 @@ final class ShibbolethTest extends \PHPUnit\Framework\TestCase
             $headers->addHeaders($server);
             $request->setHeaders($headers);
         } else {
-            $request->setServer(new \Laminas\Stdlib\Parameters($server));
+            $request->setServer($server);
         }
         return $request;
     }

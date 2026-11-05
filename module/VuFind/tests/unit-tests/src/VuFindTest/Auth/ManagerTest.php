@@ -639,9 +639,9 @@ class ManagerTest extends \PHPUnit\Framework\TestCase
     protected function getMockRequest(): MockObject&Request
     {
         $mock = $this->createMock(Request::class);
-        $post = new \Laminas\Stdlib\Parameters();
+        $post = [];
         $mock->method('getPost')->willReturn($post);
-        $get = new \Laminas\Stdlib\Parameters();
+        $get = [];
         $mock->method('getQuery')->willReturn($get);
         return $mock;
     }

@@ -30,7 +30,6 @@
 namespace VuFindTest\RecordTab;
 
 use Laminas\Http\Request;
-use Laminas\Stdlib\Parameters;
 use VuFind\ChannelProvider\ChannelLoader;
 use VuFind\RecordDriver\AbstractBase as RecordDriver;
 use VuFind\RecordTab\Channels;
@@ -124,7 +123,7 @@ class ChannelsTest extends \PHPUnit\Framework\TestCase
             ->willReturn(['record' => 'context']);
         $channels = $this->getChannels([], $loader, $driver);
         $request = new Request();
-        $request->setQuery(new Parameters(['channelToken' => 'tok', 'channelProvider' => 'prov']));
+        $request->setQuery(['channelToken' => 'tok', 'channelProvider' => 'prov']);
         $channels->setRequest($request);
         $this->assertEquals(['displaySearchBox' => false, 'record' => 'context'], $channels->getContext());
     }

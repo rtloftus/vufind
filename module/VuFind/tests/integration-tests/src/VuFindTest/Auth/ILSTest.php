@@ -152,7 +152,7 @@ final class ILSTest extends \PHPUnit\Framework\TestCase
             'username' => 'testuser', 'password' => 'testpass',
         ];
         $request = new \Laminas\Http\Request();
-        $request->setPost(new \Laminas\Stdlib\Parameters($post));
+        $request->setPost($post);
         return $request;
     }
 
